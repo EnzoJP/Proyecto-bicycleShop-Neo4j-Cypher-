@@ -166,7 +166,7 @@ CREATE (m47:NombreProductor {Nombre: "Cinelli"})
 CREATE (m48:NombreProductor {Nombre: "Pure Cycles"})
 CREATE (m49:NombreProductor {Nombre: "Origin8"})
 CREATE (m50:NombreProductor {Nombre: "Electra Bicycle Company"})
-CREATE (m51:NombreProductor {Nombre: "nirve bicycles"})
+CREATE (m51:NombreProductor {Nombre: "Nirve bicycles"})
 CREATE (m52:NombreProductor {Nombre: "Schwinn"})
 CREATE (m53:NombreProductor {Nombre: "Firmstrong"})
 CREATE (m54:NombreProductor {Nombre: "Sun Bicycles"})
@@ -511,3 +511,90 @@ MERGE(Pe2)-[:Marca]->(m65)
 
 
 //Relaciones de cambios
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//OTRA OPCION
+CREATE (m0:Productor {Nombre: "Shimano", Pais: "Japon"})
+CREATE (m1:Productor {Nombre: "SRAM", Pais: "Estados Unidos"})
+CREATE (m2:Productor {Nombre: "Magura", Pais: "Alemania"})
+CREATE (m3:Productor {Nombre: "Hope Technology", Pais: "Reino Unido"})
+CREATE (m4:Productor {Nombre: "Formula", Pais: "Italia"})
+CREATE (m5:Productor {Nombre: "Tektro", Pais: "Taiwan"})
+CREATE (m6:Productor {Nombre: "Campagnolo", Pais: "Italia"})
+CREATE (m7:Productor {Nombre: "Promax", Pais: "Taiwan"})
+CREATE (m8:Productor {Nombre: "Selle Italia", Pais: "Italia"})
+CREATE (m9:Productor {Nombre: "Fizik", Pais: "Italia"})
+CREATE (m10:Productor {Nombre: "Brooks England", Pais: "Reino Unido"})
+CREATE (m11:Productor {Nombre: "Specialized", Pais: "Estados Unidos"})
+CREATE (m12:Productor {Nombre: "Fabric", Pais: "Reino Unido"})
+CREATE (m13:Productor {Nombre: "KMC", Pais: "Taiwan"})
+CREATE (m14:Productor {Nombre: "Wippermann", Pais: "Alemania"})
+CREATE (m15:Productor {Nombre: "Trek", Pais: "Estados Unidos"})
+CREATE (m16:Productor {Nombre: "Cannondale", Pais: "Estados Unidos"})
+CREATE (m17:Productor {Nombre: "Giant", Pais: "Taiwan"})
+CREATE (m18:Productor {Nombre: "Scott", Pais: "Suiza"})
+CREATE (m19:Productor {Nombre: "Venzo", Pais: "Taiwan"})
+CREATE (m20:Productor {Nombre: "Vairo", Pais: "Argentina"})
+CREATE (m21:Productor {Nombre: "Olmo", Pais: "Italia"})
+CREATE (m22:Productor {Nombre: "Top Mega", Pais: "China"})
+CREATE (m23:Productor {Nombre: "Raleigh", Pais: "Reino Unido"})
+CREATE (m24:Productor {Nombre: "MicroSHIFT", Pais: "Taiwan"})
+CREATE (m25:Productor {Nombre: "Box Components", Pais: "Estados Unidos"})
+CREATE (m26:Productor {Nombre: "RockShox", Pais: "Estados Unidos"})
+CREATE (m27:Productor {Nombre: "Cane Creek", Pais: "Estados Unidos"})
+CREATE (m28:Productor {Nombre: "SR Suntour", Pais: "Japon"})
+CREATE (m29:Productor {Nombre: "DVO Suspension", Pais: "Estados Unidos"})
+CREATE (m30:Productor {Nombre: "Marzocchi", Pais: "Italia"})
+CREATE (m31:Productor {Nombre: "RaceFace", Pais: "Canada"})
+CREATE (m32:Productor {Nombre: "Renthal", Pais: "Reino Unido"})
+CREATE (m33:Productor {Nombre: "Funn", Pais: "Taiwan"})
+CREATE (m34:Productor {Nombre: "Easton", Pais: "Estados Unidos"})
+CREATE (m35:Productor {Nombre: "Answer", Pais: "Estados Unidos"})
+CREATE (m36:Productor {Nombre: "FSA", Pais: "Estados Unidos"})
+CREATE (m37:Productor {Nombre: "Zipp", Pais: "Estados Unidos"})
+CREATE (m38:Productor {Nombre: "Ritchey", Pais: "Estados Unidos"})
+CREATE (m39:Productor {Nombre: "Deda Elementi", Pais: "Italia"})
+CREATE (m40:Productor {Nombre: "SM Bikes", Pais: "Estados Unidos"})
+CREATE (m41:Productor {Nombre: "Cult", Pais: "Estados Unidos"})
+CREATE (m42:Productor {Nombre: "Fitbikeco", Pais: "Estados Unidos"})
+CREATE (m43:Productor {Nombre: "Odyssey BMX", Pais: "Estados Unidos"})
+CREATE (m44:Productor {Nombre: "Animal Bikes", Pais: "Estados Unidos"})
+CREATE (m45:Productor {Nombre: "State Bicycle Co", Pais: "Estados Unidos"})
+CREATE (m46:Productor {Nombre: "Fyxation", Pais: "Estados Unidos"})
+CREATE (m47:Productor {Nombre: "Cinelli", Pais: "Italia"})
+CREATE (m48:Productor {Nombre: "Pure Cycles", Pais: "Estados Unidos"})
+CREATE (m49:Productor {Nombre: "Origin8", Pais: "Estados Unidos"})
+CREATE (m50:Productor {Nombre: "Electra Bicycle Company", Pais: "Estados Unidos"})
+CREATE (m51:Productor {Nombre: "Nirve bicycles", Pais: "Estados Unidos"})
+CREATE (m52:Productor {Nombre: "Schwinn", Pais: "Estados Unidos"})
+CREATE (m53:Productor {Nombre: "Firmstrong", Pais: "Estados Unidos"})
+CREATE (m54:Productor {Nombre: "Sun Bicycles", Pais: "Estados Unidos"})
+CREATE (m55:Productor {Nombre: "DT Swiss", Pais: "Suiza"})
+CREATE (m56:Productor {Nombre: "Alexrims", Pais: "Taiwan"})
+CREATE (m57:Productor {Nombre: "Mavic", Pais: "Francia"})
+CREATE (m58:Productor {Nombre: "Weinmann", Pais: "Alemania"})
+CREATE (m59:Productor {Nombre: "Fulcrum", Pais: "Italia"})
+CREATE (m60:Productor {Nombre: "Reynolds", Pais: "Estados Unidos"})
+CREATE (m61:Productor {Nombre: "MKS", Pais: "Japon"})
+CREATE (m62:Productor {Nombre: "Wellgo", Pais: "Taiwan"})
+CREATE (m63:Productor {Nombre: "VP Components", Pais: "Estados Unidos"})
+CREATE (m64:Productor {Nombre: "Crankbrothers", Pais: "Estados Unidos"})
+CREATE (m65:Productor {Nombre: "Look Cycle", Pais: "Francia"})
+CREATE (m66:Productor {Nombre: "Time", Pais: "Francia"})
