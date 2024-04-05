@@ -3,17 +3,18 @@
 //---------------------Nodes--------------------------
 
 //nodos de Garantia con la propiedad Años
-CREATE (g1:Garantia {Años: "1"})
-CREATE (g2:Garantia {Años: "2"})
-CREATE (g3:Garantia {Años: "3"})
+CREATE (garantia:Garantia)
+CREATE (g1:TiempoGarantia {Años: "1"})
+CREATE (g2:TiempoGarantia {Años: "2"})
+CREATE (g3:TiempoGarantia {Años: "3"})
 
 //nodos de Elementos externos
-CREATE (ex1:ElementosExternos {Equipo: "Timbres"})
-CREATE (ex2:ElementosExternos {Equipo: "Luces"})
-CREATE (ex3:ElementosExternos {Equipo: "Guardabarros"})
-CREATE (ex4:ElementosExternos {Equipo: "Pie de apoyo"})
-CREATE (ex5:ElementosExternos {Equipo: "Ruedas de apoyo"})
-CREATE (ex6:ElementosExternos {Equipo: "Ninguno"})
+CREATE (adicionales:ElementosExternos)
+CREATE (ex1:TipoElementosExternos {Equipo: "Timbres"})
+CREATE (ex2:TipoElementosExternos {Equipo: "Luces"})
+CREATE (ex3:TipoElementosExternos {Equipo: "Guardabarros"})
+CREATE (ex4:TipoElementosExternos {Equipo: "Pie de apoyo"})
+CREATE (ex5:TipoElementosExternos {Equipo: "Ruedas de apoyo"})
 
 //nodos de Estado
 CREATE (es1:Estado {Equipo: "Armada"})
@@ -41,20 +42,25 @@ CREATE (Pe2:TipoPedales {Tipo: "Enganche con zapato"})
 CREATE (cad1:Cadenas)
 
 //nodos de Manubrio
-CREATE (man1:Manubrio {Tipo: "Recto"})
-CREATE (man2:Manubrio {Tipo: "Doble altura"})
-CREATE (man3:Manubrio {Tipo: "Carretera"})
-CREATE (man4:Manubrio {Tipo: "BMX"})
-CREATE (man5:Manubrio {Tipo: "Bullhorns"})
-CREATE (man6:Manubrio {Tipo: "Cruiser"})
+CREATE (manubrio:Manubrio)
+CREATE (man1:TipoManubrio {Tipo: "Recto"})
+CREATE (man2:TipoManubrio {Tipo: "Doble altura"})
+CREATE (man3:TipoManubrio {Tipo: "Carretera"})
+CREATE (man4:TipoManubrio {Tipo: "BMX"})
+CREATE (man5:TipoManubrio {Tipo: "Bullhorns"})
+CREATE (man6:TipoManubrio {Tipo: "Cruiser"})
 
 //nodos de Frenos
-CREATE (ef1:Frenos {Tipo: "Hidraulico"})
-CREATE (ef2:Frenos {Tipo: "Llanta"})
-CREATE (ef3:Frenos {Tipo: "Disco"})
+CREATE (frenos:Frenos)
+CREATE (ub:UbicacionFrenos {Tipo: "Delantero"})
+CREATE (ub2:UbicacionFrenos {Tipo: "Trasero"})
+
+CREATE (ef1:TipoFrenos {Tipo: "Hidraulico"})
+CREATE (ef2:TipoFrenos {Tipo: "Llanta"})
+CREATE (ef3:TipoFrenos {Tipo: "Disco"})
 
 //nodos de cambios
-//CREATE (cam1:Cambios {CantidadDePiñones: "7",CantidadDePlatos: "3", CantidadTotal: "21"})
+// CREATE (cam1:Cambios {CantidadDePinones: null ,CantidadDePlatos: null, CantidadTotal: CantidadDePinones * CantidadDePlatos})
 
 //nodos de Cuadro
 CREATE (cuadro:Cuadro)
@@ -510,14 +516,88 @@ MERGE(Pe2)-[:Marca]->(m64)
 MERGE(Pe2)-[:Marca]->(m65)
 
 
-//Relaciones de cambios
+//Relaciones de elementos externos
 
+MERGE(adicionales)-[:TipoElementosExternos]->(ex1)
+MERGE(adicionales)-[:TipoElementosExternos]->(ex2)
+MERGE(adicionales)-[:TipoElementosExternos]->(ex3)
+MERGE(adicionales)-[:TipoElementosExternos]->(ex4)
+MERGE(adicionales)-[:TipoElementosExternos]->(ex5)
 
+//Relaciones de frenos
+MERGE(frenos)-[:TipoDeFrenos]->(ef1)
+MERGE(frenos)-[:TipoDeFrenos]->(ef2)
+MERGE(frenos)-[:TipoDeFrenos]->(ef3)
 
+MERGE(frenos)-[:UbicacionFrenos]->(ub)
+MERGE(frenos)-[:UbicacionFrenos]->(ub2)
 
+MERGE(ef1)-[:Marca]->(m0)
+MERGE(ef1)-[:Marca]->(m1)
+MERGE(ef1)-[:Marca]->(m2)
+MERGE(ef1)-[:Marca]->(m3)
+MERGE(ef1)-[:Marca]->(m4)
 
+MERGE(ef2)-[:Marca]->(m0)
+MERGE(ef2)-[:Marca]->(m1)
+MERGE(ef2)-[:Marca]->(m5)
+MERGE(ef2)-[:Marca]->(m6)
+MERGE(ef2)-[:Marca]->(m7)
 
+MERGE(ef3)-[:Marca]->(m0)
+MERGE(ef3)-[:Marca]->(m1)
+MERGE(ef3)-[:Marca]->(m5)
+MERGE(ef3)-[:Marca]->(m6)
+MERGE(ef3)-[:Marca]->(m7)
 
+//Relaciones de garantía
+MERGE(garantia)-[:Tiempo]->(g1)
+MERGE(garantia)-[:Tiempo]->(g2)
+MERGE(garantia)-[:Tiempo]->(g3)
+
+//Relaciones manubrio
+MERGE(manubrio)-[:TipoDeManubrio]->(man1)
+MERGE(manubrio)-[:TipoDeManubrio]->(man2)
+MERGE(manubrio)-[:TipoDeManubrio]->(man3)
+MERGE(manubrio)-[:TipoDeManubrio]->(man4)
+MERGE(manubrio)-[:TipoDeManubrio]->(man5)
+MERGE(manubrio)-[:TipoDeManubrio]->(man6)
+
+MERGE(man1)-[:Marca]->(m31)
+MERGE(man1)-[:Marca]->(m32)
+MERGE(man1)-[:Marca]->(m33)
+MERGE(man1)-[:Marca]->(m34)
+MERGE(man1)-[:Marca]->(m35)
+
+MERGE(man2)-[:Marca]->(m31)
+MERGE(man2)-[:Marca]->(m32)
+MERGE(man2)-[:Marca]->(m36)
+MERGE(man2)-[:Marca]->(m11)
+MERGE(man2)-[:Marca]->(m34)
+
+MERGE (man3)-[:Marca]->(m37)
+MERGE (man3)-[:Marca]->(m38)
+MERGE (man3)-[:Marca]->(m39)
+MERGE (man3)-[:Marca]->(m36)
+MERGE (man3)-[:Marca]->(m34)
+
+MERGE (man4)-[:Marca]->(m40)
+MERGE (man4)-[:Marca]->(m41)
+MERGE (man4)-[:Marca]->(m42)
+MERGE (man4)-[:Marca]->(m43)
+MERGE (man4)-[:Marca]->(m44)
+
+MERGE (man5)-[:Marca]->(m45)
+MERGE (man5)-[:Marca]->(m46)
+MERGE (man5)-[:Marca]->(m47)
+MERGE (man5)-[:Marca]->(m48)
+MERGE (man5)-[:Marca]->(m49)
+
+MERGE (man6)-[:Marca]->(m50)
+MERGE (man6)-[:Marca]->(m51)
+MERGE (man6)-[:Marca]->(m52)
+MERGE (man6)-[:Marca]->(m53)
+MERGE (man6)-[:Marca]->(m54)
 
 
 
