@@ -9,7 +9,7 @@ CREATE (g2:TiempoGarantia {Años: "2"})
 CREATE (g3:TiempoGarantia {Años: "3"})
 
 //nodos de Elementos externos
-CREATE (adicionales:ElementosExternos)
+CREATE (adicionales:ElementosExternos {nombre: "ElementosExternos"})
 CREATE (ex1:TipoElementosExternos {Equipo: "Timbres"})
 CREATE (ex2:TipoElementosExternos {Equipo: "Luces"})
 CREATE (ex3:TipoElementosExternos {Equipo: "Guardabarros"})
@@ -21,25 +21,25 @@ CREATE (es1:Estado {Equipo: "Armada"})
 CREATE (es2:Estado {Equipo: "Desarmada"})
 
 //nodos de Suspension
-CREATE (suspension:Suspension)
-CREATE (ec1:Suspension {Tipo: "Delantera"})
-CREATE (ec2:Suspension {Tipo: "Trasera"})
-CREATE (ec3:Suspension {Tipo: "Ambas"})
+CREATE (suspension:Suspension {nombre: "Suspension"})
+CREATE (ec1:TipoSuspension {Tipo: "Delantera"})
+CREATE (ec2:TipoSuspension {Tipo: "Trasera"})
+CREATE (ec3:TipoSuspension {Tipo: "Ambas"})
 
 //nodos de Asiento
-CREATE (asiento:Asiento)
+CREATE (asiento:Asiento {nombre: "Asiento"})
 CREATE (as1:claseDeAsiento {Tipo: "Estrecho"})
 CREATE (as2:claseDeAsiento {Tipo: "Mediano"})
 CREATE (as3:claseDeAsiento {Tipo: "Grande"})
 
 
 //nodos de Pedales
-CREATE (pedales:Pedales)
+CREATE (pedales:Pedales {nombre: "Pedales"})
 CREATE (Pe1:TipoPedales {Tipo: "Urbano"})
 CREATE (Pe2:TipoPedales {Tipo: "Enganche con zapato"})
 
 //nodos de cadenas
-CREATE (cad1:Cadenas)
+CREATE (cad1:Cadenas {nombre: "Cadenas"})
 
 //nodos de Manubrio
 CREATE (manubrio:Manubrio)
@@ -51,7 +51,7 @@ CREATE (man5:TipoManubrio {Tipo: "Bullhorns"})
 CREATE (man6:TipoManubrio {Tipo: "Cruiser"})
 
 //nodos de Frenos
-CREATE (frenos:Frenos)
+CREATE (frenos:Frenos {nombre: "Frenos"})
 CREATE (ub:UbicacionFrenos {Tipo: "Delantero"})
 CREATE (ub2:UbicacionFrenos {Tipo: "Trasero"})
 
@@ -86,9 +86,9 @@ CREATE (c9:Color {color: "Amarillo"})
 
 //nodos de Ruedas
 CREATE (Rueda:Rueda)
-CREATE (r1:TipoDeRuedas {tipo_cubierta: "Ciudad"})
-CREATE (r2:TipoDeRuedas {tipo_cubierta: "Tubeless"})
-CREATE (r3:TipoDeRuedas {tipo_cubierta: "Montaña"})
+CREATE (r1:TipoDeCubierta {tipo_cubierta: "Ciudad"})
+CREATE (r2:TipoDeCubierta {tipo_cubierta: "Tubeless"})
+CREATE (r3:TipoDeCubierta {tipo_cubierta: "Montaña"})
 
 //nodos de Tamaño
 CREATE (t1:Tamano {Dimension: "XS"})
@@ -261,9 +261,9 @@ MERGE (cuadro)-[:Color]->(c9)
 //Relaciones de Rueda
 
 //tipo rueda
-MERGE (Rueda)-[:TipoDeRuedas]->(r1)
-MERGE (Rueda)-[:TipoDeRuedas]->(r2)
-MERGE (Rueda)-[:TipoDeRuedas]->(r3)
+MERGE (Rueda)-[:TipoDeCubierta]->(r1)
+MERGE (Rueda)-[:TipoDeCubierta]->(r2)
+MERGE (Rueda)-[:TipoDeCubierta]->(r3)
 
 //tamaño Rueda
 MERGE (Rueda)-[:Dimension]->(t9)
