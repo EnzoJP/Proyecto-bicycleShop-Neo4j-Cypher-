@@ -414,9 +414,9 @@ MERGE (as3)-[:Marca]->(m12)
 
 
 //relaciones de Suspension
-MERGE (suspension)-[:TiposDeSuspension]->(ec1)
-MERGE (suspension)-[:TiposDeSuspension]->(ec2)
-MERGE (suspension)-[:TiposDeSuspension]->(ec3)
+MERGE (suspension)-[:TipoDeSuspension]->(ec1)
+MERGE (suspension)-[:TipoDeSuspension]->(ec2)
+MERGE (suspension)-[:TipoDeSuspension]->(ec3)
 MERGE (ec1)-[:Marca]->(m26)
 MERGE (ec1)-[:Marca]->(m27)
 MERGE (ec1)-[:Marca]->(m28)
@@ -549,6 +549,20 @@ MERGE (cam2)-[:Marca]->(m1)
 MERGE (cam3)-[:Marca]->(m24)
 
 MERGE (cam4)-[:Marca]->(m6)
+
+
+
+
+MATCH (a:Asiento)
+MATCH (man:Manubrio)-[:TipoDeManubrio]->(mp)
+MATCH (s:Suspension)-[:TipoDeSuspension]->(sp)
+MATCH (ped:Pedales)-[:TipoDePedales]->(pp)
+MATCH (c:Cuadro)-[:TipoDeCuadro]->(cp)
+MATCH (f:Frenos)-[:TipoDeFrenos]->(fp)
+MATCH (r:Rueda)-[:TipoDeCubierta]->(rp)
+MATCH (e:ElementosExternos)-[:TipoElementosExternos]->(ep)
+
+
 
 
 
