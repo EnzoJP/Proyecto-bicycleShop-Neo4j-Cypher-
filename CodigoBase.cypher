@@ -551,21 +551,6 @@ MERGE (cam3)-[:Marca]->(m24)
 MERGE (cam4)-[:Marca]->(m6)
 
 
-
-
-MATCH (a:Asiento)
-MATCH (man:Manubrio)-[:TipoDeManubrio]->(mp)
-MATCH (s:Suspension)-[:TipoDeSuspension]->(sp)
-MATCH (ped:Pedales)-[:TipoDePedales]->(pp)
-MATCH (c:Cuadro)-[:TipoDeCuadro]->(cp)
-MATCH (f:Frenos)-[:TipoDeFrenos]->(fp)
-MATCH (r:Rueda)-[:TipoDeCubierta]->(rp)
-MATCH (e:ElementosExternos)-[:TipoElementosExternos]->(ep)
-
-
-
-
-
 //Instancia de ejemplo particular
 
 CREATE (bici:Bicicleta {DNI: "38472412"})
